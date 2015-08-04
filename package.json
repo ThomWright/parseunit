@@ -8,9 +8,8 @@
     "lint": "eslint src/",
     "mocha": "mocha src/**/*__tests__/* -R spec --require test-setup",
     "test": "npm run lint && npm run mocha",
-    "prepublish": "npm test && npm run build && npm shrinkwrap",
-    "postpublish": "rm npm-shrinkwrap.json",
-    "postinstall": "rm npm-shrinkwrap.json"
+    "prepublish": "npm run build && npm shrinkwrap",
+    "postpublish": "rm npm-shrinkwrap.json"
   },
   "repository": {
     "type": "git",
