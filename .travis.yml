@@ -1,10 +1,18 @@
 sudo: false
 language: node_js
 node_js:
-  - 'iojs'
-  - '0.12'
-  - '0.10'
+- iojs
+- '0.12'
+- '0.10'
 notifications:
   email:
     on_success: never
     on_failure: always
+deploy:
+  provider: npm
+  email: npm@thomwright.co.uk
+  api_key:
+    secure: h+brVqCsNlRK2/tjFxO3fbRgk3/v2PEZPMzHK8n4FDAtFQa5CsuoGJI6mi66+LVSRW2QV3yAf565g33f11HXi9VOKC9MduXRkJMF9SXjliFbP/RwNx/rkZFQqD3NJdfSWen+LefSOvnvQ6pjCqNktjLclqJqEBAMCHntja4pKKkkGYBbmmmilGwui0Ghzhod6GBEhPtpWYMIbpxwedJNppSEsHUbWAaKUcPZro4MD+Vjy03A4++dTPy9nTTIvUXeOx0d7KItW6oXPiVzzsJ+yZdzeWLczOEIydCQVDmf4rlY4R1qB0cdKLCFGMbMfw8RhZThuLby7xGV6md1A5qLkFsSaTyjNqLwad8ZxIiA5grf2qidMwyEWBy2PaDndNNYP3ci9TkF+3O9cxCNkTVU+tgx8Az2eid83cfyithPQZ6O8l9YFQqxIiPE07VsO6Kol++wtd7EYYbxwAVkxe/KH4XsgCoUOj6XjFDvu9+XTwwXUFgFsgwdD4UXRa4/jg+mE+DF+Rf+uD5LeUAGwuXPCBbUutshR+mjD+sdWMtYKpwYUwms2OcqxBJ/aK6OSbQsKFRJEg+xQ78f8sXezrQ42I5rWvDgfhpA7cdarn6q5p/19kAzR09SOYGgsqvkXFNL0esPymhdPUds5VB2A7+vXXs2+AFgquOPvnQawncts74=
+  on:
+    tags: true
+    repo: ThomWright/parseunit
