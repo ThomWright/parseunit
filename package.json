@@ -1,0 +1,37 @@
+{
+  "name": "parseunit",
+  "version": "0.0.0",
+  "description": "Parse strings with a number and unit",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf dist && babel src --out-dir dist --ignore \"__tests__\"",
+    "lint": "eslint src/",
+    "mocha": "mocha src/**/*__tests__/* -R spec --require test-setup",
+    "test": "npm run lint && npm run mocha",
+    "prepublish": "npm test && npm run build && npm shrinkwrap",
+    "postpublish": "rm npm-shrinkwrap.json",
+    "postinstall": "rm npm-shrinkwrap.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThomWright/parseunit"
+  },
+  "keywords": [],
+  "author": "Thom Wright <npm@thomwright.co.uk> (http://thomwright.co.uk/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ThomWright/parseunit/issues"
+  },
+  "homepage": "https://github.com/ThomWright/parseunit",
+  "dependencies": {
+    "parse-unit": "^1.0.1"
+  },
+  "devDependencies": {
+    "babel": "^5.4.7",
+    "babel-eslint": "^3.1.9",
+    "chai": "^3",
+    "eslint": "^0",
+    "mocha": "^2.2.5",
+    "rimraf": "^2.3.4"
+  }
+}
