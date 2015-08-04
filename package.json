@@ -1,6 +1,6 @@
 {
   "name": "parseunit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Parse strings with a number and unit",
   "main": "dist/index.js",
   "scripts": {
