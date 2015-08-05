@@ -1,6 +1,6 @@
 {
   "name": "parseunit",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Parse strings with a number and unit",
   "main": "dist/index.js",
   "scripts": {
@@ -22,8 +22,7 @@
     "url": "https://github.com/ThomWright/parseunit/issues"
   },
   "homepage": "https://github.com/ThomWright/parseunit",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel": "^5.4.7",
     "babel-eslint": "^4.0.5",
