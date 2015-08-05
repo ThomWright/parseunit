@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/ThomWright/parseunit",
   "dependencies": {
-    "parse-unit": "^1.0.1"
   },
   "devDependencies": {
     "babel": "^5.4.7",
