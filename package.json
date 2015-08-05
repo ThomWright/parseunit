@@ -15,7 +15,16 @@
     "type": "git",
     "url": "https://github.com/ThomWright/parseunit"
   },
-  "keywords": [],
+  "keywords": [
+    "parse",
+    "split",
+    "number",
+    "units",
+    "unit",
+    "px",
+    "em",
+    "css"
+  ],
   "author": "Thom Wright <npm@thomwright.co.uk> (http://thomwright.co.uk/)",
   "license": "MIT",
   "bugs": {
