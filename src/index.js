@@ -2,16 +2,17 @@
 const NUMBER_REGEX = /-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/;
 
 export default function parseUnit(str) {
-  const
-    // parse the number at the start of the string (this could return it in exponential notation)
-    val = parseFloat(str),
+  // parse the number at the start of the string (this could return it in exponential notation)
+  const val = parseFloat(str);
 
-    // this is the actual number string,
-    // might not be the same length as val if val is in exponential notation
-    numberString = str.match(NUMBER_REGEX)[0],
+  // this is the actual number string,
+  // might not be the same length as val if val is in exponential notation
+  const numberStrings = str.match(NUMBER_REGEX) || [];
 
-    // get everything after this number
-    unit = str.substr(numberString.length).trim();
+  // get everything after this number
+  const unit = numberStrings.length > 0
+    ? str.substr(numberStrings[0].length).trim()
+    : '';
 
   return [val, unit];
 }

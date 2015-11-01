@@ -42,6 +42,12 @@ describe('parseUnit', () => {
     expect(val).to.equal(0.0000000021);
     expect(unit).to.equal('cm');
   });
+
+  it('should handle invalid input', () => {
+    const [val, unit] = parseUnit('-d');
+    expect(val).to.satisfy(isNaN);
+    expect(unit).to.equal('');
+  });
 });
 
 describe('parseUnitObj', () => {
