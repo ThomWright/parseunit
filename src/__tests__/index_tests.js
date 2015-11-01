@@ -3,7 +3,7 @@ import parseUnit, {parseUnitObj} from '../index.js';
 describe('parseUnit', () => {
   it('should handle integers', () => {
     const [val, unit] = parseUnit('12px');
-    expect(val, 'woop').to.equal(12);
+    expect(val).to.equal(12);
     expect(unit).to.equal('px');
   });
 
@@ -30,36 +30,24 @@ describe('parseUnit', () => {
     expect(val).to.equal(13);
     expect(unit).to.equal('');
   });
+
+  it('should handle exponential notation', () => {
+    const [val, unit] = parseUnit('12e+6cm');
+    expect(val).to.equal(12000000);
+    expect(unit).to.equal('cm');
+  });
+
+  it('should handle exponential notation for decimals < 0', () => {
+    const [val, unit] = parseUnit('2.1e-9cm');
+    expect(val).to.equal(0.0000000021);
+    expect(unit).to.equal('cm');
+  });
 });
 
 describe('parseUnitObj', () => {
-  it('should handle integers', () => {
+  it('should return an object instead of an array', () => {
     const {val, unit} = parseUnitObj('12px');
-    expect(val, 'woop').to.equal(12);
+    expect(val).to.equal(12);
     expect(unit).to.equal('px');
-  });
-
-  it('should handle floats', () => {
-    const {val, unit} = parseUnitObj('12.5%');
-    expect(val).to.equal(12.5);
-    expect(unit).to.equal('%');
-  });
-
-  it('should handle negative numbers', () => {
-    const {val, unit} = parseUnitObj('-1rem');
-    expect(val).to.equal(-1);
-    expect(unit).to.equal('rem');
-  });
-
-  it('should handle a space between number and unit', () => {
-    const {val, unit} = parseUnitObj('14 px');
-    expect(val).to.equal(14);
-    expect(unit).to.equal('px');
-  });
-
-  it('should handle unitless strings', () => {
-    const {val, unit} = parseUnitObj('13');
-    expect(val).to.equal(13);
-    expect(unit).to.equal('');
   });
 });
